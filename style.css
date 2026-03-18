@@ -428,30 +428,18 @@ footer span    { color: var(--accent); }
 }
 @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
 
-
 .macchina-da-scrivere {
     overflow: hidden;
-    white-space: nowrap;
-    width: 0;
-    opacity: 0;
-    animation: scorriTesto 1s steps(30, end) forwards, fadeIn 0s forwards;
-}
-
-/* ogni elemento aspetta che il precedente finisca */
-.macchina-da-scrivere:nth-child(1) { animation-delay: 0s,    0s; }
-.macchina-da-scrivere:nth-child(2) { animation-delay: 1.2s,  1.2s; }
-.macchina-da-scrivere:nth-child(3) { animation-delay: 2.4s,  2.4s; }
-.macchina-da-scrivere:nth-child(4) { animation-delay: 3.6s,  3.6s; }
-
-/* il cursore lampeggiante solo sull'ultimo */
-.macchina-da-scrivere:last-child {
     border-right: .12em solid var(--cursor-color);
-    animation: scorriTesto 1s steps(30, end) forwards, fadeIn 0s forwards, cursore 1s step-end 3.6s infinite;
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: .12em;
+    cursor: default;
+    pointer-events: none;
+    animation: scorriTesto 3.5s steps(30, end) forwards, cursore 1s step-end infinite;
 }
-
 @keyframes scorriTesto { from { width: 0 } to { width: 100% } }
-@keyframes fadeIn      { to   { opacity: 1 } }
-@keyframes cursore     { from, to { border-color: transparent } 50% { border-color: var(--cursor-color); } }
+@keyframes cursore { from, to { border-color: transparent } 50% { border-color: var(--cursor-color); } }
 
 .no_link         { text-decoration: none; color: inherit; }
 .no_link:visited { color: inherit; }
