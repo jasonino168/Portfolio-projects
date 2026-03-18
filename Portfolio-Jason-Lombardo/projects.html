@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <title>Jason Lombardo | Projects</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="page_up">
+
+<header>
+    <div class="header-container">
+        <button id="theme-toggle" title="Cambia tema">🌙</button>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="projects.html" class="active">Projects</a>
+            <a href="skills.html">Skills</a>
+            <a href="index.html#about">About Me</a>
+            <a href="index.html#contact">Contact</a>
+            <a href="CV.html">CV</a>
+            <a href="./curriculum vitae.pdf" download="CV_Jason_Lombardo.pdf">
+                <i class="fas fa-download"></i> Download CV
+            </a>
+        </nav>
+    </div>
+</header>
+
+
+
+<div class="page-hero">
+     <div class="macchina-da-scrivere" style="text-align:center;">
+    <h1>My <span>Projects</span></h1>
+    <p>A collection of things I've built — web apps, tools and experiments.</p>
+    </div>
+</div>
+
+
+<div class="filters">
+    <button class="filter-btn active" onclick="filterProjects('all', this)">All</button>
+    <button class="filter-btn" onclick="filterProjects('frontend', this)">Frontend</button>
+    <button class="filter-btn" onclick="filterProjects('fullstack', this)">Full Stack</button>
+</div>
+
+<section class="projects-section">
+    <div class="projects-grid">
+
+        <div class="project-card" data-category="fullstack">
+            <div class="project-img" style="background: linear-gradient(135deg, #1d7102, #02a615);">
+                <i class="fas fa-layer-group"></i>
+            </div>
+            <div class="project-body">
+                <div class="project-tags">
+                    <span class="tag">HTML</span>
+                    <span class="tag">CSS</span>
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">Gemini AI</span>
+                </div>
+                <h3>TCG Connect</h3>
+                <p>Platform for trading card game players. Manage your collection, browse the marketplace, organize tournaments and get AI coaching powered by Gemini.</p>
+                <div class="project-links">
+                    <a href="https://github.com/jasonino168/TGC-project.git" target="_blank" class="link-github">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card" data-category="frontend">
+            <div class="project-img" style="background: linear-gradient(135deg, #0a2a4a, #1a4a7a);">
+                <i class="fas fa-user-circle"></i>
+            </div>
+            <div class="project-body">
+                <div class="project-tags">
+                    <span class="tag">HTML</span>
+                    <span class="tag">CSS</span>
+                    <span class="tag">JavaScript</span>
+                </div>
+                <h3>Portfolio Websites</h3>
+                <p>A collection of different portfolio websites I've built over the years.</p>
+                <div class="project-links">
+                    <a href="https://github.com/jasonino168/Portfolio-projects" target="_blank" class="link-github">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 <span>Jason Lombardo</span></p>
+</footer>
+
+<script>
+    function filterProjects(category, btn) {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.classList.toggle('hidden', category !== 'all' && card.dataset.category !== category);
+        });
+    }
+</script>
+<script src="script_theme.js"></script>
+</body>
+</html>
